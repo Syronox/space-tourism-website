@@ -1,0 +1,118 @@
+
+.dot-indicators>* {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: hsl(var(--clr-white)/0.25);
+  padding: .5em;
+}
+
+.dot-indicators>*:hover,
+.dot-indicators>*:focus {
+  background-color: hsl(var(--clr-white)/0.5);
+}
+
+.dot-indicators>[aria-selected="true"] {
+  background-color: hsl(var(--clr-white)/1);
+}
+
+.grid-container--crew{
+  grid-template-areas:
+  '. title title .'
+  '. content img .'
+  '. dots img .';
+}
+
+.grid-container--crew>.crew-list{
+  grid-area: content;
+  margin-block:clamp(1rem,5vw,5rem);
+  justify-self:start;
+}
+
+.grid-container--crew>.numbered-title{
+  grid-area: title;
+  padding:0;
+  padding-block:clamp(1rem,20vw,2rem);
+}
+
+.grid-container--crew>.dot-indicators{
+  grid-area: dots;
+  padding-block:1.5rem;
+  justify-self:start;
+}
+
+@media(max-width:720px){
+  .grid-container--crew{
+    grid-template-areas:
+          'title'
+          'content'
+          'dots'
+          'img';
+  }
+
+  .grid-container--crew>.crew-list{
+    justify-self:center;
+  }
+  .grid-container--crew>.dot-indicators{
+    justify-self:center;
+  }
+}
+
+@media(max-width:560px){
+  .grid-container--crew{
+    grid-template-areas:
+          'title'
+          'img'
+          'dots'
+          'content';
+  }
+}
+
+@media(min-width:560px){
+  .grid-container--crew>.numbered-title{
+    justify-self:start;
+    text-align: left;
+  }
+}
+
+
+.grid-container--crew>.crew-img-container{
+  grid-area: img;
+}
+
+.role{
+    color:hsl(var(--clr-white)/.5);
+    padding-block:1rem;
+  }
+
+.crew-img-container{
+  border-bottom: 1px solid hsl(var(--clr-white)/.1);
+
+}
+
+.crew-img{
+  width: clamp(15rem, 45vw + 1rem, 30rem);
+}
+
+.pad-top{
+  padding-top:2rem;
+}
+
+/* crew background images */
+.crew{
+  background-image: url(../assets/crew/background-crew-mobile.jpg);
+  background-repeat:no-repeat;
+}
+
+@media(min-width:560px){
+  .crew{
+    background-image: url(../assets/crew/background-crew-tablet.jpg);
+  }
+}
+
+@media(min-width:720px){
+  .crew{
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+  }
+}

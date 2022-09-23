@@ -1,0 +1,75 @@
+.tabs {
+  --gap:clamp( 1rem , 2vw , 2rem);
+}
+
+.planet-grid-container>*:first-child{
+  justify-self:start;
+}
+
+.planet-description{
+  padding-bottom: 2rem;
+  border-bottom: 1px solid hsl(var(--clr-white)/.25);
+}
+
+.planet-info{
+  list-style:none;
+  --gap:3rem;
+  text-align: center;
+  padding-top:1rem;
+  padding-left: 0;
+}
+
+.destination-img{
+  aspect-ratio:1;
+  width: clamp(10rem, 30vw + 1rem, 30rem);
+}
+
+.underline-indicators>[aria-selected="true"]{
+  color: hsl(var(--clr-white)/1);
+  border-color: hsl(var(--clr-white) /1);
+}
+
+@media (max-width:720px){
+  .planet-grid-container>*:first-child{
+    justify-self:center;
+  }
+  .tabs{
+    justify-content: center;
+  }
+  .planet-info{
+    justify-content: center;
+  }
+}
+
+@media (max-width:560px){
+  .planet-info{
+    display: block;
+  }
+
+  .planet-info>*:first-child{
+      margin-bottom: 2rem;
+  }
+
+  .numbered-title{
+    text-align: center;
+    padding-inline:0;
+  }
+}
+
+/* destination background images */
+.destination {
+  background-image: url(../assets/destination/background-destination-mobile.jpg);
+  background-repeat:no-repeat;
+}
+
+@media (min-width: 560px) {
+  .destination {
+    background-image: url(../assets/destination/background-destination-tablet.jpg);
+  }
+}
+
+@media (min-width:720px) {
+  .destination {
+    background-image: url(../assets/destination/background-destination-desktop.jpg);
+  }
+}

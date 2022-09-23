@@ -1,0 +1,47 @@
+.large-button {
+  font-size: clamp(1.3rem,8vw,2rem);
+  position: relative;
+  display: inline-grid;
+  z-index: 1;
+  text-decoration: none;
+  padding: 2em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.large-button::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: hsl(var(--clr-white)/.15);
+  border-radius: 50%;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 250ms linear, transform 200ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+/* home background images */
+.home {
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  background-repeat:no-repeat;
+}
+
+@media (min-width: 560px) {
+  .home {
+    background-image: url(../assets/home/background-home-tablet.jpg);
+  }
+}
+
+@media (min-width:720px) {
+  .home {
+    background-image: url(../assets/home/background-home-desktop.jpg);
+  }
+}

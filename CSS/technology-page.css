@@ -1,0 +1,126 @@
+.grid-container--technology{
+  grid-template-columns:0;
+  grid-template-areas:
+  '. . title title .'
+  '. . numbers content img';
+  grid-row-gap: 2rem
+}
+
+.grid-container--technology>.numbered-title{
+  grid-area: title;
+  justify-self:start;
+  padding:0;
+  padding-block:2rem;
+}
+
+.grid-container--technology>.number-indicators{
+  grid-area:numbers;
+  justify-self:start;
+}
+
+.grid-container--technology>.technology-img{
+  grid-area: img;
+  justify-self:end;
+  width:clamp(20rem,40vw,31.781rem);
+}
+
+.grid-container--technology>.technology-list{
+  grid-area: content;
+  justify-self:start;
+}
+
+@media(max-width:720px){
+  .grid-container--technology{
+    padding:0;
+    justify-content: center;
+    grid-template-areas:
+    '. title .'
+    '. img .'
+    '. numbers .'
+    '. content .';
+  }
+  .grid-container--technology>.numbered-title{
+    padding-inline:3rem;
+  }
+  .grid-container--technology>.number-indicators{
+    justify-self:center;
+    flex-direction: row;
+    aspect-ratio:3.5;
+    width:clamp(8rem,35vw,14rem);
+  }
+  .grid-container--technology>.technology-img{
+    justify-self:center;
+    max-width: 100vw;
+    width: 100vw;
+  }
+
+  .grid-container--technology>.launch-vehicle{
+    content:url(../assets/technology/image-launch-vehicle-landscape.jpg);
+  }
+
+  .grid-container--technology>.space-capsule{
+    content:url(../assets/technology/image-space-capsule-landscape.jpg);
+  }
+
+  .grid-container--technology>.spaceport{
+    content:url(../assets/technology/image-spaceport-landscape.jpg);
+  }
+
+  .grid-container--technology>.technology-list{
+    justify-self:center;
+  }
+}
+
+@media(max-width:560px){
+  .grid-container--technology>.numbered-title{
+    justify-self:center;
+    padding:1rem;
+  }
+  .change-fs{
+    font-size:1rem;
+  }
+}
+
+/* technology background images */
+.technology{
+  background-image: url(../assets/technology/background-technology-mobile.jpg);
+  background-repeat:no-repeat;
+}
+
+@media(min-width:560px){
+  .technology{
+    background-image:url(../assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media(min-width:720px){
+  .technology{
+    background-image:url(../assets/technology/background-technology-desktop.jpg);
+  }
+}
+
+/* number indicators */
+.number-indicators {
+  flex-direction: column;
+  font-family: "Bellefair", serif;
+  font-weight: 500;
+}
+
+.number-indicators>* {
+  width: 4rem;
+  border-radius: 50%;
+  border: 2px solid hsl(var(--clr-white)/.25);
+  color: hsl(var(--clr-white));
+  aspect-ratio: 1;
+}
+
+.number-indicators>*:hover,
+.number-indicators>*:focus {
+  border-color: hsl(var(--clr-white)/.5);
+}
+
+.number-indicators>[aria-selected="true"] {
+  color: hsl(var(--clr-dark));
+  background-color: hsl(var(--clr-white));
+  font-weight: 700;
+}
