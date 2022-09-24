@@ -1,4 +1,8 @@
 # space-tourism-website
+
+link to the website:
+https://syronox.github.io/space-tourism-website/
+
 A site for a fictional space tourism company. 
 This is a challenge from 'Frontend Mentor' which provided the images and the specifics of how the site should look like.
 
